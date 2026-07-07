@@ -11,7 +11,7 @@ import json, os, math, random, string, time, collections
 app = Flask(__name__, static_folder="static", static_url_path="/static")
 app.config['SECRET_KEY'] = 'communaltable-secret-key-change-me'
 CORS(app)
-socketio = SocketIO(app, cors_allowed_origins="*", async_mode='eventlet')
+socketio = SocketIO(app, cors_allowed_origins="*", async_mode='threading')
 
 BASE = os.path.dirname(__file__)
 
