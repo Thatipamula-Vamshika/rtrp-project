@@ -465,6 +465,10 @@ def on_close_room(data):
 def index():
     return send_file(os.path.join(BASE, "index.html"))
 
+@app.route("/test")
+def test():
+    return "Server Updated Successfully"
+
 @app.route("/public/<path:filename>")
 def public_files(filename):
     return send_from_directory(os.path.join(BASE, "public"), filename)
