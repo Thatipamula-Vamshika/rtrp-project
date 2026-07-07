@@ -304,8 +304,8 @@ async function init() {
 
   try {
     const [rest, defs] = await Promise.all([
-      fetch('public/restaurants.json').then(r=>r.json()),
-      fetch('public/city-defaults.json').then(r=>r.json()).catch(()=>({})),
+      fetch('/public/restaurants.json').then(r=>r.json()),
+      fetch('/public/city-defaults.json').then(r=>r.json()).catch(()=>({})),
     ]);
     catalog = rest;
     cityDefaults = defs;
